@@ -77,9 +77,10 @@ const onSignIn = async (googleUser) => {
 const signInWithGoogleAsync = async () => {
   try {
     const result = await Google.logInAsync({
-      androidClientId: "YOUR_AUTH_ID",
+      androidClientId: "//YOUR_OAUTH_ID",
       behavior: "web",
-      iosClientId: "YOUR_AUTH_ID",
+      // iosClientId:
+      //   "YOUR_OAUTH_ID",
       scopes: ["profile", "email"],
     });
 
@@ -167,7 +168,12 @@ export const editProfile = (
   updatedProfilePic
 ) => {
   return async (dispatch, getState) => {
-    const { userId, userAttributes } = getState().auth;
+    const {
+      userId,
+      userAttributes,
+      userCreatedPost,
+      userInterestedPost,
+    } = getState().auth;
 
     let { gmail, profile_picture, created_at } = userAttributes;
 

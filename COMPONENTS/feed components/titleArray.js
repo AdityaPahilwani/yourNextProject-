@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   bold: { fontWeight: "bold" },
-  caption: { fontSize: 24, marginVertical: marginVertical },
+  caption: { fontSize: 24,},
   techStack: { marginRight: 7, marginVertical: 5 },
 });
 

@@ -183,7 +183,7 @@ const NEW_POST = (props) => {
           />
 
           <TextInput
-            style={{ ...styles.textInputContainer }}
+            style={{ ...styles.textInputContainer,height:null }}
             multiline={true}
             value={description}
             multiline={true}

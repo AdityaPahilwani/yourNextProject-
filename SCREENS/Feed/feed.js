@@ -42,6 +42,7 @@ const feedScreen = (props) => {
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [pageLoading, setPageLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   // const [selectedId, setSelectedId] = useState(false);
   // const [modal, setModal] = useState(false);
 
@@ -50,7 +51,7 @@ const feedScreen = (props) => {
   const loggedUserId = useSelector((state) => state.auth.userId);
   // let isFetching = useSelector((state) => state.feed.isFetching);
   const load = useCallback(
-    async (paginate, calledFrom) => {
+    async (paginate) => {
       try {
         // console.log(paginate, calledFrom);
         // await dispatch(feed.turnOnFetching());
@@ -66,13 +67,25 @@ const feedScreen = (props) => {
     if (!isLoading && !pageLoading) {
       setIsLoading(true);
 
-      load(false, "useEffect").then(() => {
+      load(false).then(() => {
         setIsLoading(false);
       });
     } else {
       return;
     }
   }, []);
+
+  const refresh = useCallback(async () => {
+    if (!isLoading && !pageLoading && !refreshing) {
+      console.log('refreshhhhhh');
+      setRefreshing(true);
+      load(false).then(() => {
+        setRefreshing(false);
+      });
+    } else {
+      return;
+    }
+  }, [isLoading, pageLoading, refreshing]);
 
   const paginate = useCallback(async () => {
     console.log("end reached", nothingToFetch);
@@ -146,6 +159,8 @@ const feedScreen = (props) => {
       ) : (
         <FlatList
           keyExtractor={(item) => item.feedId}
+          onRefresh={refresh}
+          refreshing={refreshing}
           data={feeds}
           ref={flatListRef}
           bounces={false}

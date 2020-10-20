@@ -33,9 +33,16 @@ export default (state = initialState, action) => {
       } else {
         lastFeedId = state.lastFeedId;
       }
+      let finalData = [];
+      if (action.paginate) {
+        finalData = [...state.feeds, ...newFeeds];
+      } else {
+        finalData = [...newFeeds];
+        nothingToFetch = false;
+      }
       return {
         ...state,
-        feeds: [...state.feeds, ...newFeeds],
+        feeds: finalData,
         lastFeedId,
         nothingToFetch,
       };

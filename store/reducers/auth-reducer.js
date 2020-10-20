@@ -24,7 +24,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case AUTHENTICATE:
-      console.log(action);
+      // console.log(action);
       return {
         userId: action.userId,
         userAttributes: action.userAttr,
@@ -73,7 +73,7 @@ export default (state = initialState, action) => {
     case INSERT_USER_CREATED_POST:
       let newfeed = action.feed;
       let id = newfeed.feedId;
-      let newUserCreatedPost = [id, ...state.userCreatedPost];
+      let newUserCreatedPost = [...state.userCreatedPost, id];
       let newuserCreatedPostArr = [];
       if (state.userCreatedPostArr) {
         newuserCreatedPostArr = state.userCreatedPostArr;

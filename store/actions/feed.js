@@ -90,7 +90,7 @@ export const fetchPost = (paginate) => {
     let id;
     let dataSnapshot;
 
-    if (!nothingToFetch) {
+    if (!nothingToFetch || !paginate) {
       console.log("yooo");
       var newFeed,
         feedArr = [];
@@ -118,7 +118,12 @@ export const fetchPost = (paginate) => {
       if (dataSnapshot.empty) {
         DocumentEmpty = true;
         console.log("dispatcheed");
-        dispatch({ type: FETCH, feeds: [], nothingToFetch: DocumentEmpty });
+        dispatch({
+          type: FETCH,
+          feeds: [],
+          nothingToFetch: DocumentEmpty,
+          paginate,
+        });
         return;
       }
 
@@ -170,7 +175,12 @@ export const fetchPost = (paginate) => {
           index++;
         });
 
-        dispatch({ type: FETCH, feeds: feedArr, nothingToFetch: isSameReq });
+        dispatch({
+          type: FETCH,
+          feeds: feedArr,
+          nothingToFetch: isSameReq,
+          paginate,
+        });
       });
     }
     return;

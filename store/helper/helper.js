@@ -57,7 +57,6 @@ export const getFullPost = async (feedId) => {
         interestedPeople,
       } = res;
       getUser(createdBy).then((userObj) => {
-     
         let Feed = new feed(
           userObj,
           title,
@@ -69,7 +68,7 @@ export const getFullPost = async (feedId) => {
           feedId,
           interestedPeople
         );
-    
+
         resolve(Feed);
       });
     });
@@ -94,6 +93,7 @@ export const getPostOnlyDetails = async (feedId) => {
         createdAt,
         interestedPeople,
       } = res;
+      console.log(createdBy);
       let Feed = new feed(
         createdBy,
         title,
