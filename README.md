@@ -17,8 +17,86 @@ This application got
 3) Side effect handling
 4) Google auth
 5) Minimum api calls use lot of redux,
+
+<h1>Screenshots</h1>
+<br>
+<h2>Auth</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/auth.png" width="400px"</img> 
+</div>
+
+<br>
+<h2>Feed</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/feed.png" width="400px"</img> 
+</div>
+
+<br>
+<h2>Project details-1</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/post-detail-1.png" width="400px"</img> 
+</div>
+
+<br>
+<h2>Project details-2</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/post-detail-2.png" width="400px"</img> 
+</div>
+
+<br>
+<h2>Create post</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/create-post.png" width="400px"</img> 
+</div>
+
+<br>
+<h2>user home</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/user home.png" width="400px"</img> 
+</div>
+
+<br>
+<h2>Edit profile</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/edit profile.png" width="400px"</img> 
+</div>
+
+
+<br>
+<h2>User Projects</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/user-projects.png" width="400px"</img> 
+</div>
+
+
+<br>
+<h2>user interested projects</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/user interested projects.png" width="400px"</img> 
+</div>
+
+
+<br>
+<h2>interested-people</h2>
+<br>
+<div align="center">
+    <img src="/Screenshots/interested-people.png" width="400px"</img> 
+</div>
+
+
+
 you can check the application here:
 https://expo.io/@aditya_pahilwani/projects/PROJECT_PARTNER_FINDER
+<br>
 Full demo link
 https://photos.app.goo.gl/RhhEtuMW3ouFqDhu9
 
