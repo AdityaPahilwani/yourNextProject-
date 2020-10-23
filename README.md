@@ -17,7 +17,7 @@ This application got
 3) Side effect handling
 4) Google auth
 5) Minimum api calls use lot of redux,
-
+6) Blazing fast
 <h1>Screenshots</h1>
 <br>
 <h2>Auth</h2>
